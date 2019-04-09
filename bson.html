@@ -1,0 +1,33 @@
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<!-- 开发环境版本，包含了有帮助的命令行警告 -->
+		<script src="https://cdn.jsdelivr.net/npm/vue@2.6.10/dist/vue.js"></script>
+	</head>
+
+	<body>
+		<div>
+			<textarea id="bson_src" v-bind:rows="rows" v-bind:cols="cols" v-on:keyup="onkeyup">
+                {{ text }}
+            </textarea>
+		</div>
+		<script>
+			var vm = new Vue({
+                el:"#bson_src",
+
+                data:{
+                    rows:20,
+                    cols:80,
+                    text:"请输入bson格式内容"
+                    
+                },
+
+                methods:{
+                    onkeyup:function(event) {
+                        this.text = "测试bson"
+                    }
+                }
+            })
+		</script>
+	</body>
+</html>
